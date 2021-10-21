@@ -13,7 +13,7 @@ export class Negociacao {
       return this.quantidade * this.valor;
   }
 
-  public criaDe(dateString: string, quatidadeString: string, valorSting: string): Negociacao {
+  public static criaDe(dateString: string, quatidadeString: string, valorSting: string): Negociacao {
     const exp = /-/g;
     const date = new Date(dateString.replace(exp, ','));
     const quantidade = parseInt(quatidadeString);

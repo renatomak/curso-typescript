@@ -3,7 +3,12 @@ import { NegociacoesView } from './views/negociacoes-views.js';
 
 const controller = new NegociacaoController();
 const form = document.querySelector('.form');
-form.addEventListener('submit', event => {
+
+if (form) {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
     controller.adiciona();
-});
+  });
+} else {
+    throw Error("Não foi possivel inicializar a aplicação, verifique se o seu formulário exite.")
+}
